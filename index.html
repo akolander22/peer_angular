@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app="toDoListApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Peer Angular</title>
+    <script src="angular.min.js"></script>
+    <script src="script.js"></script>
+  </head>
+  <body ng-controller="MainController">
+    <h1>To Do List</h1>
+    <input type="text" ng-model="toDo" />
+    <button ng-click="handleClick()">Add to List</button>
+    <ul>
+      <li ng-repeat="item in logList track by $index">
+        {{item}}
+        <button ng-click="removeClick(item)" id="{{item}}">Remove</button>
+      </li>
+    </ul>
+  </body>
+</html>
